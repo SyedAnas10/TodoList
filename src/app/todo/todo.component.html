@@ -1,0 +1,52 @@
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+
+  <input #myInput (keyup.enter)="onAdd(myInput.value)" />
+
+  <button
+    type="button"
+    class="btn btn-primary btn-lg"
+    (click)="onAdd(myInput.value)"
+  >
+    Add
+  </button>
+</div>
+
+<ul id="myUL">
+  <div *ngFor="let item of toDoListArray">
+    <div *ngIf="item.check; else loading">
+      <li class="checked">
+        {{ item.name }}
+        <button
+          (click)="onDelete(item.id)"
+          type="button"
+          class="btn btn-outline-danger"
+          style="float: right;"
+        >
+          Delete
+        </button>
+      </li>
+    </div>
+    <ng-template #loading>
+      <li>
+        {{ item.name }}
+        <button
+          (click)="alterCheck(item.id)"
+          type="button"
+          class="btn btn-outline-success"
+          style="float: right;"
+        >
+          Done
+        </button>
+        <button
+          (click)="onDelete(item.id)"
+          type="button"
+          class="btn btn-outline-danger"
+          style="float: right;"
+        >
+          Delete
+        </button>
+      </li>
+    </ng-template>
+  </div>
+</ul>
