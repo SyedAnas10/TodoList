@@ -32,8 +32,8 @@ export class TodoComponent implements OnInit {
     });
   }
 
-  onDelete(id) {
-    console.log(id);
-    this.toDoListArray = this.toDoListArray.filter(({ id }) => id !== id);
+  onDelete(idnum) {
+    //console.log(id);
+    this.toDoListArray = this.toDoListArray.filter(({ id }) => id !== idnum);
   }
 }
