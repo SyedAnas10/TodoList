@@ -5,3 +5,17 @@
 .buttonpad {
   padding-top: 30px;
 }
+/* Style the header */
+.header {
+  background-color: #000000;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
